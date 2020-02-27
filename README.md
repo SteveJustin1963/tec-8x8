@@ -1,6 +1,6 @@
-# tec-8x8 Matrix, 64 LED 2D Display
+# tec-8x8-TE-11-22
 
-## TE-11-22
+## tec-8x8 Matrix, 64 LED 2D Display
 
 ![](https://github.com/SteveJustin1963/tec-8x8/blob/master/readme-img/cct.png)
 
