@@ -37,6 +37,24 @@ A DIP HEADER is a plug which has thin pins similar to the pins on an IC, on the 
 ## MATRIX PINS & SOCKETS 
 These are the cheapest and best way of connecting a single line to a printed circuit board. 
 
+Solder the 64 LEDs into position as well as the 8 transistors and their 1 k base resistors. The east-west conductors are created with tinned copper wire running along the ends of the LED leads and this connects to the collector of the driver transitor via the PC circuit. The only lead which has to be cut short is the anode lead, to
+prevent it touching the tinned copper
+wire.
+
+The lower part of the board contains a BUS from which the 8 lines for each chip are taken. The code letter P on this BUS stands for positive and the N stands for negative. The other lines are numbered 0 to 7 and this coincides with the data lines on the latches. The two output latches can be: 74LS347, or 74LS377 or 74LS273 or a combination of any two. The information on the overlay shows which jumper link must be included for the type of latch you choose. Eighteen jumper links connect between the data bus and the latches to complete the assembly. The only wiring left is the connecting wires between the DIP HEADER plug and the PC board. This plug is designed to fit into the expansion port socket on the TEC-1. The 10 lines from the bus on the display board connect to the DIP plug and the two spare lines connect to the chip select outputs near the 74LS138 (near the keyboard encoder). These lines are for ports 3 and 4. Solder two matrix pins to these output holes and use a matrix-pin connector soldered to the hook-up wire to connect to these pins. 
+
+
+![]()
+Diagram showing how the 'COMMON' line is created on the underside of the board. Both leads of each LED are soldered to the PC board. But only the ANODE lead is cut short. The CATHODE leads are either joined with a length of tinned copper wire which runs below the board, or each lead is bent over and soldered to the next lead to produce a rigid conductor which runs at rightangles to the copper tracks on the
+board. 
+
+The 8x8 display is now ready for testing and we will give 3 simple programs to test the operation of the LEDs. This will check their
+illumination, their OFF response and the correct wiring of the data lines and chip select lines. To check the brightness of the LEDs, 
+insert this program at 800: 
+
+
+
+
 
 
 ==============
