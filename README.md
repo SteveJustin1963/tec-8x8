@@ -47,4 +47,10 @@ These are the cheapest and best way of connecting a single line to a printed cir
 
 ==============
 
+## Iterate, new hypotheses or predictions
+
+https://github.com/SteveJustin1963/tec-8x8-mod
+
+
+
 
