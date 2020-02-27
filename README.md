@@ -41,7 +41,8 @@ These are the cheapest and best way of connecting a single line to a printed cir
 cont...
 Solder the 64 LEDs into position as well as the 8 transistors and their 1 k base resistors. The east-west conductors are created with tinned copper wire running along the ends of the LED leads and this connects to the collector of the driver transitor via the PC circuit. The only lead which has to be cut short is the anode lead, to prevent it touching the tinned copper wire.  
 
-![](https://github.com/SteveJustin1963/tec-8x8/blob/master/led-side.png) Diagram showing how the 'COMMON' line is created on the underside of the board. Both leads of each LED are soldered to the PC board. But only the ANODE lead is cut short. The CATHODE leads are either joined with a length of tinned copper wire which runs below the board, or each lead is bent over and soldered to the next lead to produce a rigid conductor which runs at rightangles to the copper tracks on the board.
+![](https://github.com/SteveJustin1963/tec-8x8/blob/master/led-side.png) 
+Diagram showing how the 'COMMON' line is created on the underside of the board. Both leads of each LED are soldered to the PC board. But only the ANODE lead is cut short. The CATHODE leads are either joined with a length of tinned copper wire which runs below the board, or each lead is bent over and soldered to the next lead to produce a rigid conductor which runs at rightangles to the copper tracks on the board.
 
 
 
