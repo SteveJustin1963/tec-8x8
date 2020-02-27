@@ -1,11 +1,5 @@
 # tec-8x8 Matrix, 64 LED 2D Display
 
-## Abstract
-
-## Introduction 
-
-## Literature Review
-
 ## TE-11-22
 
 ![]()
