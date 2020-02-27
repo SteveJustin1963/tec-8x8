@@ -77,7 +77,13 @@ D3 04
 Reset
 GO 
 
-![](https://github.com/SteveJustin1963/tec-8x8/blob/master/led-side.png) 
+![](https://github.com/SteveJustin1963/tec-8x8/blob/master/one.png) 
+
+The LED which will illuminate is shown in the diagram. If any other LED illuminates, check the select lines. Now go back to experimenting with the display on the TEC-1. When you get to p.30, you will be able to use the 64 LED display to create some startling effects.
+
+![](https://github.com/SteveJustin1963/tec-8x8/blob/master/pcb.png) 
+
+
 
 
 ## Iterate, new hypotheses or predictions
