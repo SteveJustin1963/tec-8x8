@@ -150,6 +150,57 @@ What value must be inserted into the program to illuminate the four corner LEDs?
 
 It is now your turn to illuminate a LED. Select a LED on the matrix and mark it with a pen. Determine its coordinates and put them into the program. Execute the program and see it the marked LED comes on. Try two more of these routines and confirm the program by illuminating the LED. Now illuminate two or three LEDs in any row or column by adding the relevant Hex values together and observe the LEDs on the display. With this simple program it is not possible to illuminate any combination of LEDs on the whole screen because we are using the outputs in the static mode. To illustrate this, try to illuminate one column and one row at the same time. You know the Hex value for a complete row is FF. Place this into the program and see what happens. The result is a completely-filled screen. The closest effect to producing an intersecting row and column is a non-illuminated row and column produced by inserting a value such as EF into the program.  
 
+## PROBLEMS:
+Demonstrate your understanding of addressing the matrix display by solving the following:
+1. Illuminate the whole screen.
+2. Illuminate the whole screen except for the outer row and column of LEDs.
+3. Illuminate the four centre LEDs as well as the next row and column on each side.
+4. Illuminate any quarter of the display.
+5. Leave the two centre rows and columns non-illuminated.
+6. Place FF in port 3 and 00 in port 4. What appears on the screen? Why? 
+
+## MAKING A FLASHING LED
+We know the general formula for turning on a LED on the matrix: 
+
+  3E (data) ; Single Byte
+  D3 03
+  3E (data)
+  D3 04
+  76
+  
+ ![](flashing-led)
+
+To FLASH the LOWEST priority LED we insert data into the program as follows: 
+
+  LD A,01     800 3E 01
+  OUT (3),A   802 D3 03
+  LD A,01     804 3E 01
+  OUT (4),A   806 D3 04
+  CALL DELAY  808 CD 00 0A
+  LD A,00     80B 3E 00
+  OUT (3),A   80D D3 03
+  LD A,00     80F 3E 00
+  OUT (4),A   811 D3 04
+  CALL DELAY  813 CD 00 0A
+  JP 0800     816 C3 00 08
+
+DELAY ROUTINE AT 0A00:
+
+11 FF 06
+1B
+7B
+B2
+C2 03 0A
+C9 
+
+Press RESET, GO and the lowest LED will blink ON and OFF. The program is basically loading data into ports 3 and 4 then calling the delay so that the information will be displayed on the screen for a short period of time. The output latches are then loaded with 00 data which will produce a non-illuminated display and the delay routine is called. This produces the 'OFF' period. The program is cycled in an endless loop to produce the flashing. With this program it is easy to flash any number of LEDs or even the whole screen.  
+
+## TO BLINK THE WHOLE SCREEN 
+To blink the whole screen, change the data at addresses 801 and 805 to FF. This has the effect of filling the screen for one delay period and then non-illuminating the screen for one delay period. To alternately blink the left-hand side of the screen and then the right-hand side: Insert the following data: 
+
+
+
+
 
 
 
