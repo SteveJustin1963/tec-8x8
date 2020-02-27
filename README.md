@@ -28,12 +28,23 @@ In our design, the LEDs are multiplexed and this means they are being turned on 
 
 ## CONSTRUCTION
 Before starting any of the construction, it is absolutely essential that you know which lead of the light emitting diode is the cathode. There is only one guaranteed way of determining this. You need a 3v to 6v battery and a 100 ohm or 220ohm resistor. Place the LED and resistor in a series circuit connected to the battery and check the degee of illumination. The cathode lead will be the one nearest the negative terminal of the battery. There are no other sure-fire methods of determining this as some LEDs have their long lead cut differently to the accepted practice. We have seen some LEDs with the outline (inside the LED) around the opposite way to the general rule. So, it can be quite confusing. You must test each LED or at least a sample from the batch. Next you must be certain which way they are to be inserted in the PC board. A mistake will take a very long time to rectify. The cathode lead is nearest to the row of transistors. When soldering the LEDs to the board, you must take special care to keep them all the same height and perpendicular to the board. The neatness of the dispay will depend entirely on how well you position the LEDs. At first you may think one lead of the
-LEDs is not connected to the circuit. But this is where we have had to improvise. Multiplexing requires one Ah line of conductors to travel north-south and the matching line to travel east-west. This would normally require a double-sided PC board, but since they are very expensive and ft difficult to solder, we have opted for the cheaper approach. 
+LEDs is not connected to the circuit. But this is where we have had to improvise. Multiplexing requires one Ah line of conductors to travel north-south and the matching line to travel east-west. This would normally require a double-sided PC board, but since they are very expensive and ft difficult to solder, we have opted for the cheaper approach. cont...
 
 ![](https://github.com/SteveJustin1963/tec-8x8/blob/master/readme-img/wir.png)
- 
 
-==============
+## DIP HEADER
+A DIP HEADER is a plug which has thin pins similar to the pins on an IC, on the underside. On the top are cupshape (or 'Y' shape) terminals to which you can make a solder connection. Leads can be soldered to the terminals to create a low-cost adaptor. It is suggested that heat-shrink tubing be placed over each lead before soldering to the Dip Plug. When all the leads are attached, the sleeving is slid over each terminal so that the conductor is strengthened. This will prevent fine wiskers of wire shorting from one pin to the other and creating havoc.
+
+## MATRIX PINS & SOCKETS
+These are the cheapest and best way of connecting a single line to a printed circuit board. 
+
+cont...
+Solder the 64 LEDs into position as well as the 8 transistors and their 1 k base resistors. The east-west conductors are created with tinned copper wire running along the ends of the LED leads and this connects to the collector of the driver transitor via the PC circuit. The only lead which has to be cut short is the anode lead, to prevent it touching the tinned copper wire.  
+
+![](https://github.com/SteveJustin1963/tec-8x8/blob/master/led-side.png) Diagram showing how the 'COMMON' line is created on the underside of the board. Both leads of each LED are soldered to the PC board. But only the ANODE lead is cut short. The CATHODE leads are either joined with a length of tinned copper wire which runs below the board, or each lead is bent over and soldered to the next lead to produce a rigid conductor which runs at rightangles to the copper tracks on the board.
+
+
+
 
 ## Iterate, new hypotheses or predictions
 
