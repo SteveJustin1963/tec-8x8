@@ -237,6 +237,114 @@ Press RESET, GO and the lowest LED will blink ON and OFF. The program is basical
 ## TO BLINK THE WHOLE SCREEN 
 To blink the whole screen, change the data at addresses 801 and 805 to FF. This has the effect of filling the screen for one delay period and then non-illuminating the screen for one delay period. To alternately blink the left-hand side of the screen and then the right-hand side: Insert the following data: 
 
+at address:
 
+`801 insert FF`
 
+`805 insert OF`
+
+`80C insert FF`
+
+`810 insert FO`
+
+You can make the flash move in the up/down motion by programming: 
+
+`801 insert 0F`
+
+`805 insert FF`
+
+`80C insert F0`
+
+`810 insert FF`
+
+An overlap can be created by inserting the following data: 
+
+`801 insert 1F `
+
+`805 insert FF`
+
+`80C insert F8`
+
+`810 insert FF`
+
+You will notice the two centre rows remain ON for the whole period of time as shown by this table: 
+
+![](https://github.com/SteveJustin1963/tec-8x8-TE-11-22/blob/master/readme-img/top-bot.png)
+
+An interlocking effect can be created by programming the following: 
+
+`801 insert AA
+
+805 insert FF
+
+80C insert 55
+
+810 insert FF `
+
+To make a block of 4 LEDs jump diagonally and back again, the following information is inserted into the program: 
+
+`change 801 to 0F
+
+change 805 to 0F
+
+change 80C to F0
+
+change 810 to F0 `
+
+You can experiment with the length of the delay to produce a faster or slower flash rate.
+
+For a slow flash insert: `11 FF 0A`
+
+For a medium flash insert: `11 FF 08`
+
+For a fast flash insert: `11 FF 06`
+
+## TO RUN A SINGLE LED ACROSS THE DISPLAY 
+
+This program will run a single LED across the bottom of the display, from left to right and HALT. 
+
+`LD A,01       800 3E 01
+
+OUT (4),A     802 D3 04
+
+LD C,08       804 0E 08
+
+LD A,01       806 3E 01
+
+OUT (3),A     808 D3 03
+
+LD BA         809 47
+
+CALL DELAY    80A CD 00 0C
+
+LD A,B        80D 78
+
+RLC           80E CB 07
+
+DEC C         810 0D
+
+JP NZ LOOP    812 C2 08 08
+
+HALT          815 76`
+
+To regulate the speed at which the LED crosses the display, we need a delay routine. (Exactly the same as the previous delay routine.) 
+
+Delay routine at 0C00:
+
+`11 FF 06
+1B
+7B
+B2
+C2 03 0C
+C9`
+
+For a full column to move across the screen, change the data at 801 to FF. To create a REPEAT, change the Halt at 
+
+`815 to C3 00 08`
+
+To make a single LED run around the perimeter of the display, we must create a program for each of the four sides. The program above is suitable for the first side and three more  
+
+![](8x8start)
+
+programs are needed. At location 815 we remove the HALT function (or the return function) and add the following: Press RESET,ADdress 0815, +. Now continue: 
 
