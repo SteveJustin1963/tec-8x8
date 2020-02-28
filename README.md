@@ -354,16 +354,52 @@ To make a single LED run around the perimeter of the display, we must create a p
 programs are needed. At location 815 we remove the HALT function (or the return function) and add the following: Press RESET,ADdress 0815, +. Now continue: 
 
 `	LD A,80	815 3E 80	`
+
 `	0UT (4),A	817 D3 04	`
+
 `	LD C,07	819 0E 07	`
+
 `	LD A,02	S1B 3E 02	`
+
 `	0UT (3),A	81D D3 03	`
+
 `	LD B,A	81F 47	`
+
 `	CALL DELAY	820 CD 00 0C	`
+
 `	LD A,B	823 78	`
+
 `	RLC A	824 CB 07	`
+
 `	DEC C	826 0D	`
+
 `	JP NZ L00P	827 C2 1D 08	`
+
 `	HALT	82A 76	`
 
+Press RESET, GO. The LED will travel along 2 sides of the display and Halt. Program the third side as follows:  Press RESET, ADdress, 082A, + Add the following:  
+
+`	LD A,80	82A 3E S0	`
+
+`	OUT (3),A	82C D3 03	`
+
+`	LD C,07	82E 0E 07	`
+
+`	LD A,40	830 3E 40	`
+
+`	OUT (4),A	832 D3 04	`
+
+`	LD B,A	834 47	`
+
+`	CALL DELAY	835 CD 00 0C	`
+
+`	LAD A,B	838 78	`
+
+`	RRC A	839 CB 0F	`
+
+`	DEC C	83B 0D	`
+
+`	JP NZ LOOP	83C C2 32 08	`
+
+`	HALT	83F 76	`
 
