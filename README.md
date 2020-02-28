@@ -273,23 +273,23 @@ You will notice the two centre rows remain ON for the whole period of time as sh
 
 An interlocking effect can be created by programming the following: 
 
-`801 insert AA
+`801 insert AA`
 
-805 insert FF
+`805 insert FF`
 
-80C insert 55
+`80C insert 55`
 
-810 insert FF `
+`810 insert FF`
 
 To make a block of 4 LEDs jump diagonally and back again, the following information is inserted into the program: 
 
-`change 801 to 0F
+`change 801 to 0F`
 
-change 805 to 0F
+`change 805 to 0F`
 
-change 80C to F0
+`change 80C to F0`
 
-change 810 to F0 `
+`change 810 to F0`
 
 You can experiment with the length of the delay to produce a faster or slower flash rate.
 
@@ -303,40 +303,45 @@ For a fast flash insert: `11 FF 06`
 
 This program will run a single LED across the bottom of the display, from left to right and HALT. 
 
-`LD A,01       800 3E 01
+`LD A,01       800 3E 01`
 
-OUT (4),A     802 D3 04
+`OUT (4),A     802 D3 04`
 
-LD C,08       804 0E 08
+`LD C,08       804 0E 08`
 
-LD A,01       806 3E 01
+`LD A,01       806 3E 01`
 
-OUT (3),A     808 D3 03
+`OUT (3),A     808 D3 03`
 
-LD BA         809 47
+`LD BA         809 47`
 
-CALL DELAY    80A CD 00 0C
+`CALL DELAY    80A CD 00 0C`
 
-LD A,B        80D 78
+`LD A,B        80D 78`
 
-RLC           80E CB 07
+`RLC           80E CB 07`
 
-DEC C         810 0D
+`DEC C         810 0D`
 
-JP NZ LOOP    812 C2 08 08
+`JP NZ LOOP    812 C2 08 08`
 
-HALT          815 76`
+`HALT          815 76`
 
 To regulate the speed at which the LED crosses the display, we need a delay routine. (Exactly the same as the previous delay routine.) 
 
 Delay routine at 0C00:
 
-`11 FF 06
-1B
-7B
-B2
-C2 03 0C
-C9`
+`11 FF 06`
+
+`1B`
+
+`7B`
+
+`B2`
+
+`C2 03 0C`
+
+`C9`
 
 For a full column to move across the screen, change the data at 801 to FF. To create a REPEAT, change the Halt at 
 
@@ -344,7 +349,21 @@ For a full column to move across the screen, change the data at 801 to FF. To cr
 
 To make a single LED run around the perimeter of the display, we must create a program for each of the four sides. The program above is suitable for the first side and three more  
 
-![](8x8start)
+![](https://github.com/SteveJustin1963/tec-8x8-TE-11-22/blob/master/readme-img/8x8start.png)
 
 programs are needed. At location 815 we remove the HALT function (or the return function) and add the following: Press RESET,ADdress 0815, +. Now continue: 
+
+`	LD A,80	815 3E 80	`
+`	0UT (4),A	817 D3 04	`
+`	LD C,07	819 0E 07	`
+`	LD A,02	S1B 3E 02	`
+`	0UT (3),A	81D D3 03	`
+`	LD B,A	81F 47	`
+`	CALL DELAY	820 CD 00 0C	`
+`	LD A,B	823 78	`
+`	RLC A	824 CB 07	`
+`	DEC C	826 0D	`
+`	JP NZ L00P	827 C2 1D 08	`
+`	HALT	82A 76	`
+
 
