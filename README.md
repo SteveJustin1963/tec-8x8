@@ -240,15 +240,3 @@ To blink the whole screen, change the data at addresses 801 and 805 to FF. This 
 
 
 
-
-
-
-
-========
-## Iterate, new hypotheses or predictions
-
-https://github.com/SteveJustin1963/tec-8x8-mod
-
-
-
-
