@@ -91,22 +91,22 @@ To check the data and chip select lines, insert this program:
 Reset
 GO 
 
-![](https://github.com/SteveJustin1963/tec-8x8/blob/master/one.png) 
+![](https://github.com/SteveJustin1963/tec-8x8-TE-11-22/blob/master/readme-img/one.png) 
 
 The LED which will illuminate is shown in the diagram. If any other LED illuminates, check the select lines. Now go back to experimenting with the display on the TEC-1. When you get to p.30, you will be able to use the 64 LED display to create some startling effects.
 
-![](https://github.com/SteveJustin1963/tec-8x8/blob/master/pcb.png) 
+![](https://github.com/SteveJustin1963/tec-8x8-TE-11-22/blob/master/readme-img/pcb.png) 
 
 The possibilities and effects on a MATRIX layout are infinite. We will allocate the next few pages to showing some interesting visual effects. Firstly we will show how each of the LEDs is accessed. As with any matrixing system, each location has a set of co-ordinates. If we compare our display with the x and y axes in geometry, we find the axis has the lower output port number and the y-axis the higher number. The output ports allocated to this display are 3 and 4 and this is determined by the chip access lines on the main board. Each line from the 74LS138 has a particular number and we have selected lines 3 and 4.  On the display board, each of the LEDs has a particular co-ordinate value which must be in the form of a Hex number. Each successive row or column has a hex number which is DOUBLE the previous number. The following diagram shows this: The lowest priority LED has the value 01, 01 and the highest LED 80, 80. The value of each LED between these limits is also given, as well as the value for 4 individual LEDs, as a guide. Placing these hex values into a simple program will illuminate any particular LED on the screen. Here is the general program: 
 
-![](gen)
+![](https://github.com/SteveJustin1963/tec-8x8-TE-11-22/blob/master/readme-img/gen.png)
 
 ##  IF THE 8x8 MATRIX DOESN'T WORK 
 We described the construction of the 8x8 matrix and presented 3 short programs to test the LEDs in the display. Hopefully you will have put the project together by now and will be ready to explore its capabilities. The main difference between this project and the display on the TEC-1 is not so much the number of LEDs, but the way in which they are arranged. We have created a regular matrix of 8 LEDs by 8 LEDs and this produces a screen very similar to a window on a video display. The most common fault will be one or two of the LEDs failing to illuminate when the whole screen is accessed. If this is the case, or if one is dull, the fault will be a damaged LED. LEDs  are temperature sensitive. and excess heat when soldering will damage them. On the other hand, it may be a poor quality LED in the batch. If any of the LEDs are particularly dull, they should be replaced at this stage to produce a good display. Here are some of the possible faults and their remedies: If a row or column fails to light, the fault will be in one of the output lines of a latch or one of the driver transistors. Make sure it is not a dry joint or a missing link and then check the orientation of the transistors and the LEDs. If a row and column is failing to illuminate, the fault will lie in a shorted LED at the intersection. Remove the LED and turn on the remainder of the screen. If the remainder of the LEDs come on, the fault is a short. The only other fault we have seen is one row glowing brighter than the rest. This can be due to one of the transistors shorting between collector and emitter. A short to base may cause the row to be extinguished. If all these suggestions fail to locate the fault, turn the TEC-1 off and reprogram the set of instructions. Check to see that you have loaded FF into both port 3 and port 4. Check both ends of the connecting leads and make sure they are connected correctly to the pins on the dip plug. Since the expansion port socket is effectively in parallel with the other memory chips, it is very unlikely the the PC tracks will have shorts between them. This means you should look mainly on the display board itself. 
 
 ## Code
 
-![](p4p3)
+![](https://github.com/SteveJustin1963/tec-8x8-TE-11-22/blob/master/readme-img/p4p3.png)
 
 Diag 1: The ports and their Hex values.
 
@@ -137,15 +137,15 @@ Illuminate 3 of the other LEDs by inserting the following data into the program:
 
 More than one LED can be illuminated in any row or column by adding the Hex value of each LED. We will start with the simplest case but absolutely any LEDs in any row or column can be illuminated.  
 
-![](diag2)
+![](https://github.com/SteveJustin1963/tec-8x8-TE-11-22/blob/master/readme-img/diag2.png)
 
 In diagram 2, two LEDs are shown illuminated. These have co-ordinates 01,01 and 01,02. To turn on both of these LEDs we add the bottom Hex numbers. The result is 03. Place this value into the program at address 801.
 
-![](diag3)
+![](https://github.com/SteveJustin1963/tec-8x8-TE-11-22/blob/master/readme-img/diag3.png)
 
 Diagram 3 shows five LEDs illuminated. Add the Hex numbers together and insert it into the program and see if you are correct. Did you get 1 F? 
 
-![](diag4)
+![](https://github.com/SteveJustin1963/tec-8x8-TE-11-22/blob/master/readme-img/diag4.png)
 
 The fourth diagram shows ALL the LEDs on the bottom row illuminated. What value must be placed in the program at 801 to access these LEDs? 
 
@@ -154,19 +154,19 @@ The answer if FF. This is obtained by adding 01, 02, 04, 08   10, 20, 40, 80. th
 ## Problem:
 Load the program with a hex value which will illuminate the four LEDs in the centre of the bottom row: 
 
-![](diag5)
+![](https://github.com/SteveJustin1963/tec-8x8-TE-11-22/blob/master/readme-img/diag5.png)
 
 Firstly look up which values are allocated to each LED then add these values. Place this into the program and observe the result. You will be correct with the value 3C. The program for accessing the LEDs  in the 8X8 Marix is identical to that for the display on the 
 TEC-1. The only difference is in appearance. A regular array makes the effect more dramatic and the overall possibilities are much
 greater.
 
-![](diag6)
+![](https://github.com/SteveJustin1963/tec-8x8-TE-11-22/blob/master/readme-img/diag6.png)
 
 To turn on the four centre LEDs we must insert the value 08 + 10 into the program for both outputs.
 ## Problem:
 What value must be inserted into the program to illuminate the four corner LEDs? 
 
-![](diag7)
+![](https://github.com/SteveJustin1963/tec-8x8-TE-11-22/blob/master/readme-img/diag7.png)
 
 It is now your turn to illuminate a LED. Select a LED on the matrix and mark it with a pen. Determine its coordinates and put them into the program. Execute the program and see it the marked LED comes on. Try two more of these routines and confirm the program by illuminating the LED. Now illuminate two or three LEDs in any row or column by adding the relevant Hex values together and observe the LEDs on the display. With this simple program it is not possible to illuminate any combination of LEDs on the whole screen because we are using the outputs in the static mode. To illustrate this, try to illuminate one column and one row at the same time. You know the Hex value for a complete row is FF. Place this into the program and see what happens. The result is a completely-filled screen. The closest effect to producing an intersecting row and column is a non-illuminated row and column produced by inserting a value such as EF into the program.  
 
@@ -192,7 +192,7 @@ We know the general formula for turning on a LED on the matrix:
 
 `76`
   
- ![](flashing-led)
+ ![](https://github.com/SteveJustin1963/tec-8x8-TE-11-22/blob/master/readme-img/flashing-led.png)
 
 To FLASH the LOWEST priority LED we insert data into the program as follows: 
 
