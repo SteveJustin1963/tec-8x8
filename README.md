@@ -7,3 +7,7 @@ https://github.com/SteveJustin1963/tec-MAGAZINES/blob/master/talking_electronics
 
 ## Circuit
 https://easyeda.com/editor#id=fc54c60feb254248a23280836a921f3c
+
+
+##
+ 
