@@ -1,21 +1,15 @@
 # tec-8x8
 
 An 8x8, 64 LED matrix, aka a simple pixel, 2D Display, presented in issue TE-11 pg 22.
-
-1. test each code example
-2. run game examples
-2a. Use integrated 8x8 module instead of individual LEDs
+- test each code example
+- test game examples
+- Use integrated 8x8 module instead of individual LEDs
 
 
 ## Circuit
 - https://easyeda.com/editor#id=fc54c60feb254248a23280836a921f3c
 - https://easyeda.com/editor#id=e735c026b394450987aabdbba4294485
 - 
-
-
-
-
-
 
 ### Iterate
 - POV
