@@ -16,7 +16,7 @@ An 8x8, 64 LED matrix, aka a simple pixel, 2D Display, presented in issue TE-11 
 - Vectrex
 - 16x16
 - 8x8x8
-- try 8x8x8
+- 8x8x8
 - alt lighting; neon, xenon, incandescent, laser, nixie, plasma, 
 - stereoscopic 8x8 ; https://en.wikipedia.org/wiki/Stereoscopy, new code, game etc
 - volumetric display ; https://en.wikipedia.org/wiki/Volumetric_display, new code
