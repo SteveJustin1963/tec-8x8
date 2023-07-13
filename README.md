@@ -22,6 +22,11 @@ An 8x8, 64 LED matrix, aka a simple pixel, 2D Display, presented in issue TE-11 
 - Vectrex
 - 16x16
 - 8x8x8
+- try 8x8x8
+- alt lighting; neon, xenon, incandescent, laser, nixie, plasma, 
+- stereoscopic 8x8 ; https://en.wikipedia.org/wiki/Stereoscopy, new code, game etc
+- volumetric display ; https://en.wikipedia.org/wiki/Volumetric_display, new code
+- simple CRO
 - Stereoptic matrix, some early games used this, showing a series of lights coming at you giving the illusion of forward movement. inside that was a gun to shoot bullets forward to hit a moving target in the middle. 
 - Stereoptic- POV; combining both to get cude 3d video! 
 - CHA-81 LED Chaser DIY Kit
@@ -35,3 +40,7 @@ An 8x8, 64 LED matrix, aka a simple pixel, 2D Display, presented in issue TE-11 
 ## Reference
 - https://github.com/SteveJustin1963/tec-MAGAZINES/blob/master/talking_electronics_11.pdf
 - https://en.wikipedia.org/wiki/Stereopticon
+- https://au.rs-online.com/web/c/displays-optoelectronics/displays-industrial-monitors/led-displays/?searchTerm=TA23-11CGKWA
+- https://www.kingbright.com/attachments/file/psearch/000/00/00/TA23-11CGKWA(Ver.8A).pdf
+- https://www.ebay.com.au/itm/202687431320?ul_noapp=true
+- https://www.google.com/search?q=MAX7219&rlz=1C1CHBF_enAU775AU775&oq=MAX7219&aqs=chrome..69i57j69i61l3&sourceid=chrome&ie=UTF-8
