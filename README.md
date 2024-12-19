@@ -1,3 +1,5 @@
+multi char variables used for clarity, when using code need to reduce to one var.
+
 # tec-8x8
 
 An 8x8, 64 LED matrix, aka a simple pixel, 2D Display, presented in issue TE-11 pg 22.
